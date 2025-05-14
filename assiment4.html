@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table </title>
+    <style>
+        body {
+            /* font-family: Arial, sans-serif; */
+            padding: 20px;
+            background-color: rgba(77, 102, 177, 0.582);
+        }
+        h2{
+            color: rgb(194, 65, 91);
+
+        }
+        input, button {
+            color: rgb(255, 127, 136);
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        #output {
+            margin-top: 20px;
+        color: rgb(222, 97, 168);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Enter a Number </h2>
+
+    <input type="number" id="numberInput" placeholder="Enter number" />
+    <button onclick="printTable()">Print Table</button>
+
+    <div id="output"></div>
+
+    <script>
+        function printTable() {
+            var num = document.getElementById('numberInput').value;
+            var outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = '';
+
+            if (num === '') {
+                outputDiv.innerHTML = '<p> enter  number.</p>';
+                return;
+            }
+
+            var tableHtml = '<h3> Table of ' + num + '</h3>';
+            tableHtml += '<ul>';
+            for (var i = 1; i <= 10; i++) {
+                tableHtml += '<li>' + num + ' x ' + i + ' = ' + (num * i) + '</li>';
+            }
+            tableHtml += '</ul>';
+
+            outputDiv.innerHTML = tableHtml;
+        }
+    </script>
+
+</body>
+</html>
